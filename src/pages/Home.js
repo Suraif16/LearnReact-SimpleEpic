@@ -1,6 +1,9 @@
 import MainBanner from "../components/banners/MainBanner";
 import StandardLayout from "../components/layout/StandardLayout";
 import StandardContainer from "../components/containers/StandardContainer";
+import StandardCarousel from "../components/carousel/StandardCarousel";
+import StandardContainerGroup from "../components/containers/StandardContainerGroup";
+import LinkGroup from "../links/LinkGroup";
 
 //images
 import img1 from '../images/iphone-se.jpg';
@@ -36,15 +39,53 @@ const DATA = [
   }
 ]
 
+const CAROUSEL_DATA = [
+  {
+    image: img1,
+    imageAlt: "iPhone-SE"
+  },
+  {
+    image: img2,
+    imageAlt: "iPhone 14"
+  },
+  {
+    image: img3,
+    imageAlt: "iPad"
+  },
+  {
+    image: img4,
+    imageAlt: "AirPod"
+  }
+]
+
+
 function Home() {
   return (
     <div>
         <StandardLayout>
+        {/* 1) Main Banner */}
           <MainBanner />
-          <div className="grid grid-cols-2">
-            {DATA.map(item => (<StandardContainer title={item.title} description={item.description} image={item.image} style={item.style} />))}
-          </div>
 
+        {/* 2) Box Components */}
+          <StandardContainerGroup data={DATA}/>
+
+        {/* 3) Carousel */}
+          <StandardCarousel data={CAROUSEL_DATA} />
+
+        {/* 4) Page Content */}
+          <div className="bg-gray-400">
+          {/* 4.1_ Main Content */}
+          <p className="px-[200px] py-5 text-sm text-gray-700">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sapien vel bibendum bibendum, velit sapien tincidunt nunc, vel bibendum
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sapien vel bibendum bibendum, velit sapien tincidunt nunc, vel bibendum
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sapien vel bibendum bibendum, velit sapien tincidunt nunc, vel bibendum
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sapien vel bibendum bibendum, velit sapien tincidunt nunc, vel bibendum
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, sapien vel bibendum bibendum, velit sapien tincidunt nunc, vel bibendum
+          </p>
+          {/* 4.2)Sub Links */}
+          <LinkGroup />
+          </div>
+          {/* 5) Footer */}
         </StandardLayout>
 
     </div>

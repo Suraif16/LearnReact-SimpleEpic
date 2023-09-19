@@ -16,13 +16,14 @@ const NavbarItem = ({path, name}) => {
 
 function Navbar() {
   return (
-    <div className='text-gray-100 p-3 bg-gray-800 sticky flex flex-row gap-3 justify-between items-center shadow-md'>
+    <div className='fixed w-full text-gray-100 p-3 bg-gray-800 flex flex-row gap-3 justify-between items-center shadow-md'>
         <FaBeer /> 
         <div className='flex flex-row gap-5'>
             <NavbarItem path="/store" name="Store"/>
             <NavbarItem path="/social" name="Social"/>
             <NavbarItem path="/contact" name="Contact"/>
             <NavbarItem path="/help" name="Help"/>
+            <NavbarItem path="/loign" name="Login"/>
         </div>
         <div className='flex flex-row gap-3'>
             <FaSearch />
